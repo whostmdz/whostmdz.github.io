@@ -1,17 +1,13 @@
+/* ========== VOTRE STYLE ORIGINAL ========== */
 :root{
-  /* 0 = dark, 1 = light */
   --theme: 0;
   --theme-icon: url("assets/dark.svg");
-
-  /* Couleur pivot qui tourne doucement via JS (colors()) */
   --theme-color: hsl(190, 45%, calc(70% * (1 - var(--theme)) + 35% * var(--theme)));
   --theme-color-contrast: hsl(from var(--theme-color) h s calc(100 - l));
   --theme-text-color: hsl(from var(--theme-color) h 0% l);
   --theme-background: hsl(from var(--theme-color) h s calc(3 * (1 - var(--theme)) + 96 * var(--theme)));
   --theme-surface: hsl(from var(--theme-color) h s l / 0.1);
-
   --refresh-icon: url("refresh-dark.svg");
-
   --radius: 10px;
   --gap: 10px;
   --max: 960px;
@@ -33,15 +29,12 @@ body{
   margin:0;
 }
 
-/* Layout */
+/* Layout original */
 .container{max-width:var(--max);margin-inline:auto;padding:0 12px}
 header, main, footer{margin-top:12px}
-#everything{display:flex;flex-flow:row wrap;justify-content:center;gap:var(--gap)}
 .card-row{display:flex;flex-wrap:wrap;gap:var(--gap);align-items:center}
 .card{background:var(--theme-surface);border-radius:5px;padding:15px;min-width:0}
 #content{max-width:800px}
-#aside{width:220px}
-@media (max-width:1100px){#aside{width:100%}}
 
 /* Hero card */
 #avatar{width:auto;height:auto;max-width:150px;max-height:150px;border-radius:10px;margin:10px}
@@ -68,14 +61,14 @@ abbr{cursor:help}
 
 /* Blob follower */
 #blob{
---blob-size:100px;
-background:var(--theme-surface);
-width:var(--blob-size);height:var(--blob-size);
-border-radius:50%;
-position:fixed;top:0;left:0;z-index:-1;
-filter:blur(50px);
-transform:translate(-50%,-50%);
-transition:transform .5s cubic-bezier(.33,1,.68,1);
+  --blob-size:100px;
+  background:var(--theme-surface);
+  width:var(--blob-size);height:var(--blob-size);
+  border-radius:50%;
+  position:fixed;top:0;left:0;z-index:-1;
+  filter:blur(50px);
+  transform:translate(-50%,-50%);
+  transition:transform .5s cubic-bezier(.33,1,.68,1);
 }
 
 /* Theme + refresh buttons as icons */
@@ -110,16 +103,14 @@ footer{display:flex;flex-wrap:wrap;justify-content:center;padding:11px;gap:5px;m
 
 /* Matrix rain canvas */
 #rain{
-position:fixed;inset:0;width:100vw;height:100vh;z-index:-2;pointer-events:none;
-mix-blend-mode:screen;
+  position:fixed;inset:0;width:100vw;height:100vh;z-index:-2;pointer-events:none;
+  mix-blend-mode:screen;
 }
 
 #contact code { background: rgba(0,0,0,.2); padding: 0 .25rem; border-radius: 4px; }
 #contact details { background: var(--theme-surface); border-radius: 8px; padding: 10px; border: 1px dashed var(--theme-color-contrast); }
 #contact summary { cursor: pointer; color: var(--theme-color); }
-#contact pre { background: rgba(0,0,0,.25); padding: 10px; border-radius: 8px; overflow:auto; }/* Footer */
-footer{display:flex;flex-wrap:wrap;justify-content:center;padding:11px;gap:5px;margin-top:10px}
-#low{text-align:center;color:grey;font-size:13px;margin:6px 0}
+#contact pre { background: rgba(0,0,0,.25); padding: 10px; border-radius: 8px; overflow:auto; }
 
 #refreshlink::before {
   content: var(--refresh-icon);
@@ -127,23 +118,126 @@ footer{display:flex;flex-wrap:wrap;justify-content:center;padding:11px;gap:5px;m
   top: 4px;
 }
 
+/* ========== NOUVEAU : SIDEBAR SEULEMENT ========== */
 
-#contact code { background: rgba(0,0,0,.2); padding: 0 .25rem; border-radius: 4px; }
-#contact details { background: var(--theme-surface); border-radius: 8px; padding: 10px; border: 1px dashed var(--theme-color-contrast); }
-#contact summary { cursor: pointer; color: var(--theme-color); }
-
-#contact pre { background: rgba(0,0,0,.25); padding: 10px; border-radius: 8px; overflow:auto; }
-
-#content, #aside {
-  background-color: var(--theme-surface);
-  border-radius: 5px;
-  padding: 15px;
-  max-width: 800px;
-
-  /* flexbox has a min limit put in place, so we override it */
-  min-width: 0;
+/* Structure avec sidebar */
+.site-layout {
+  display: flex;
+  min-height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 30px;
 }
 
-#aside {
-  width: 200px;
+/* Sidebar fixe */
+#sidebar {
+  flex: 0 0 220px;
+  height: calc(100vh - 40px);
+  position: sticky;
+  top: 20px;
+  overflow-y: auto;
+  padding: 20px;
+  background: var(--theme-surface);
+  border-radius: 5px;
+}
+
+.sidebar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 0 25px 0;
+  color: var(--theme-color);
+  border-bottom: 2px dashed var(--theme-color);
+  padding-bottom: 10px;
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar-links a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: var(--theme-text-color);
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+
+.sidebar-links a:hover {
+  background: var(--theme-color);
+  color: var(--theme-color-contrast);
+  transform: translateX(5px);
+  border: 1px dashed var(--theme-color-contrast);
+}
+
+.sidebar-links hr {
+  border: none;
+  height: 1px;
+  background: var(--theme-color);
+  opacity: 0.3;
+  margin: 20px 0;
+}
+
+/* Wrapper pour le contenu principal */
+.main-content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ajustement pour votre contenu existant */
+.container {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+#everything {
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .site-layout {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  #sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .sidebar-links a {
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+  }
+  
+  .sidebar-links hr {
+    display: none;
+  }
+}
+
+/* Pour les très petits écrans */
+@media (max-width: 600px) {
+  .sidebar-links a {
+    min-width: 120px;
+    font-size: 0.9rem;
+    padding: 6px 8px;
+  }
 }

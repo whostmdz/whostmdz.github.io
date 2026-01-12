@@ -26,7 +26,7 @@ function refreshlink(){
     link.href=c[1];
 }
 
-/* Scramble typing title */
+/* Scramble typing title, merci hyperplexed */
 function typing(){
     const phrases=["Thomas Diemoz","Étudiant","Dev Python","En train de dormir","Linux enjoyer","Open to stage"];
     const main=document.querySelector("#changing-title");
