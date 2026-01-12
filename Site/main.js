@@ -28,7 +28,7 @@ function refreshlink(){
 
 /* Scramble typing title */
 function typing(){
-    const phrases=["Thomas Diemoz","Étudiant","Dev Python","En train de dormir","Arch Linux enjoyer","Open to stage"];
+    const phrases=["Thomas Diemoz","Étudiant","Dev Python","En train de dormir","Linux enjoyer","Open to stage"];
     const main=document.querySelector("#changing-title");
     const letters="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     let text=main.textContent;
