@@ -1,7 +1,6 @@
 function randint(max){return Math.floor(Math.random()*max)}
 function clamp(v,min,max){return Math.min(Math.max(min,v),max)}
 
-/* Random fact refresher */
 let index_old=-1;
 function refreshlink(){
     const data = [
@@ -26,9 +25,8 @@ function refreshlink(){
     link.href=c[1];
 }
 
-/* Scramble typing title */
-function typing(){
-    const phrases=["Thomas Diemoz","Étudiant","Dev Python","En train de dormir","Arch Linux enjoyer","Open to stage"];
+function typing(){ // Merci à Hyperplexed pour l'explication du code.
+    const phrases=["Thomas Diemoz","Étudiant","un passionné de technologie","en train de dormir","éveillé... à moins que","probablement en ligne", "pwning"];
     const main=document.querySelector("#changing-title");
     const letters="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     let text=main.textContent;
@@ -49,7 +47,6 @@ function typing(){
     },5000);
 }
 
-/* Pointer-following blob */
 function follow(e){
     const blob=document.getElementById("blob");
     blob.style.transform=`translate(${e.clientX-50}px, ${e.clientY-50}px)`;
@@ -67,7 +64,6 @@ function colors(){
     },100);
 }
 
-/* Theme toggle */
 function toggle_theme(){
     const style=document.documentElement.style;
     const theme=getComputedStyle(document.body).getPropertyValue("--theme").trim();
@@ -75,7 +71,7 @@ function toggle_theme(){
     window.location.reload();
 }
 
-/* Wire events and init */
+
 document.addEventListener("mousemove", follow);
 document.addEventListener("DOMContentLoaded",()=>{
     const refresh=document.querySelector("#refreshlink");
