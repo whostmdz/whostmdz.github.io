@@ -2,11 +2,16 @@
   --theme: 0;
   --theme-color: hsl(190, 45%, calc(70% * (1 - var(--theme)) + 35% * var(--theme)));
   --theme-color-contrast: hsl(from var(--theme-color) h s calc(100 - l));
-  --theme-text-color: hsl(from var(--theme-color) h 0% l);
+  --theme-text-color: hsl(from var(--theme-color) h 0% calc(l * (1 - var(--theme)) + (100 - l) * var(--theme)));
   --theme-background: hsl(from var(--theme-color) h s calc(3 * (1 - var(--theme)) + 96 * var(--theme)));
   --theme-surface: hsl(from var(--theme-color) h s l / 0.1);
   --muted: hsl(from var(--theme-color) h 10% calc(50% * (1 - var(--theme)) + 60% * var(--theme)));
 }
+
+@font-face {     
+  font-family: "MaPolice";     
+  src: url("fonts/Kozifa.ttf") format("truetype"); 
+} 
 
 * { 
   box-sizing: border-box; 
@@ -23,53 +28,55 @@ body {
   background: var(--theme-background);
   color: var(--theme-text-color);
   line-height: 1.6;
-  padding: 20px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
-/* Site name header */
+/* Header with logo and nav */
 header {
-  max-width: 680px;
-  margin: 0 auto 20px;
-  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 50;
 }
 
-.site-name {
-  font-size: 1.2rem;
-  font-weight: normal;
-  margin: 0;
+.site-logo {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s;
 }
 
-.site-name a {
-  color: var(--theme-text-color);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.site-name a:hover {
-  color: var(--theme-color);
+.site-logo:hover {
+  transform: scale(1.1);
 }
 
 /* Navigation */
-nav {
-  max-width: 680px;
-  margin: 0 auto 60px;
-  width: 100%;
-}
-
 nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 30px;
   flex-wrap: wrap;
+  justify-content: flex-start;
+
+  padding-left: 0;
+  margin-left: 0;
 }
+
 
 nav a {
   color: var(--muted);
   text-decoration: none;
   transition: color 0.3s;
+  font-size: 1rem;
+  
+
 }
 
 nav a:hover {
@@ -78,45 +85,97 @@ nav a:hover {
 
 /* Main content */
 main {
-  max-width: 1400px;
-  margin: 0 auto;
   width: 100%;
-  flex: 1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
 }
 
-/* Home page layout with ASCII art */
+/* Main title with glitch effect */
+.main-title {
+  font-size: clamp(4rem, 12vw, 10rem);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 0.05em;
+  position: relative;
+  font-family: 'MaPolice', monospace;
+  margin-top: -100px
+}
+
+.main-title::before,
+.main-title::after {
+  content: 'WHOSTMDZ.';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  opacity: 0.8;
+  
+}
+
+.main-title::before {
+  color: var(--theme-color);
+  animation: glitch1 2.5s infinite;
+}
+
+.main-title::after {
+  color: var(--theme-color);
+  animation: glitch2 3s infinite;
+}
+
+@keyframes glitch1 {
+  0%, 100% { clip-path: inset(0 0 0 0); transform: translateX(0); }
+  10% { clip-path: inset(10% 0 60% 0); transform: translateX(-5px); }
+  20% { clip-path: inset(80% 0 0 0); transform: translateX(5px); }
+  30% { clip-path: inset(40% 0 40% 0); transform: translateX(-5px); }
+  40% { clip-path: inset(0 0 0 0); transform: translateX(0); }
+}
+
+@keyframes glitch2 {
+  0%, 100% { clip-path: inset(0 0 0 0); transform: translateX(0); }
+  15% { clip-path: inset(50% 0 30% 0); transform: translateX(5px); }
+  25% { clip-path: inset(20% 0 70% 0); transform: translateX(-5px); }
+  35% { clip-path: inset(70% 0 10% 0); transform: translateX(5px); }
+  45% { clip-path: inset(0 0 0 0); transform: translateX(0); }
+}
+
+/* Home page layout */
 .home-layout {
   display: flex;
   gap: 60px;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+  max-width: 1400px;
+  width: 100%;
 }
-
-
-
 
 /* Hero section */
 .hero {
-  margin-bottom: 40px;
-  max-width: 680px;
+  max-width: 600px;
   flex-shrink: 0;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 8px;
   font-weight: normal;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--muted);
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   font-weight: normal;
 }
 
 .intro {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
+  font-size: 1rem;
+  margin-bottom: 15px;
   line-height: 1.8;
 }
 
@@ -138,7 +197,7 @@ h3 {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
-  margin-top: 30px;
+  margin-top: 25px;
 }
 
 .social-links a {
@@ -154,6 +213,22 @@ h3 {
 .social-links a:hover {
   background: var(--theme-color);
   color: var(--theme-background);
+}
+
+/* ASCII art */
+.ascii-sidebar {
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.ascii-art {
+  font-size: 15px;
+  line-height: 1.2;
+  white-space: pre;
+  color: var(--muted);
+  max-height: 70vh;
+  overflow: hidden;
+  font-family: monospace;
 }
 
 /* Page header */
@@ -325,7 +400,7 @@ h3 {
 /* Theme toggle button */
 #theme-toggle {
   position: fixed;
-  top: 20px;
+  bottom: 20px;
   right: 20px;
   width: 40px;
   height: 40px;
@@ -369,44 +444,46 @@ h3 {
 
 /* Footer */
 footer {
-  max-width: 100%;
-  margin: 60px auto 20px;
-  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
   color: var(--muted);
   font-size: 14px;
-  padding: 0 20px;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.footer-left {
   text-align: center;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 968px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  nav ul {
+    gap: 15px;
+  }
+  
+  .main-title {
+    font-size: clamp(2.5rem, 10vw, 6rem);
+    margin-bottom: 30px;
+  }
+  
   h2 { font-size: 1.5rem; }
   h3 { font-size: 1.2rem; }
-  .intro { font-size: 1rem; }
-  nav ul { gap: 15px; }
-  
-  .project-item,
-  .contact-section {
-    padding-left: 15px;
-  }
+  .intro { font-size: 0.95rem; }
   
   .home-layout {
     flex-direction: column;
+    gap: 30px;
   }
   
-  .ascii-sidebar .ascii-art {
-    font-size: 6px;
-    overflow-x: scroll;
+  .ascii-sidebar {
+    display: none;
+  }
+  
+  main {
+    padding-top: 120px;
   }
 }
