@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,11 +18,16 @@
     <a href="index.html">
       <img src="assets/logo.png" alt="Logo whostmdz" class="site-logo">
     </a>
-    <nav>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="nav-menu">
       <ul>
         <li><a href="projets.html">projets</a></li>
-        <li><a href="contact.html">contact</a></li>
         <li><a href="veille.html">veille</a></li>
+        <li><a href="contact.html">contact</a></li>
       </ul>
     </nav>
   </header>
@@ -31,47 +37,8 @@
       <div class="page-header">
         <h1>Veille Informatique</h1>
         <p>
-          Mes dernières découvertes et articles sur les tendances technologiques, 
-          la sécurité informatique et le développement web.
+          EN CONSTRUCTION !
         </p>
-      </div>
-
-      <div class="rss-controls">
-        <button id="refresh-feed" class="refresh-btn">
-          🔄 Actualiser le flux
-        </button>
-        <div id="loading" class="loading" style="display: none;">
-          Chargement des articles...
-        </div>
-      </div>
-
-      <div id="rss-feed" class="veille-grid">
-        <!-- Les articles RSS seront chargés ici -->
-      </div>
-
-      <!-- Articles de secours si le RSS ne charge pas -->
-      <div id="fallback-articles" class="veille-grid" style="display: none;">
-        <article class="veille-item">
-          <h3>Intelligence Artificielle et Développement</h3>
-          <div class="date">15 Janvier 2026</div>
-          <p>
-            Analyse des dernières avancées en IA générative et leur impact sur 
-            le développement logiciel. Comment les outils comme GitHub Copilot 
-            transforment notre façon de coder.
-          </p>
-          <a href="#" target="_blank" rel="noopener">Lire l'article →</a>
-        </article>
-
-        <article class="veille-item">
-          <h3>Sécurité Zero Trust</h3>
-          <div class="date">10 Janvier 2026</div>
-          <p>
-            Exploration du modèle Zero Trust en cybersécurité. Pourquoi cette 
-            approche devient essentielle dans un monde de travail hybride et 
-            comment l'implémenter.
-          </p>
-          <a href="#" target="_blank" rel="noopener">Lire l'article →</a>
-        </article>
       </div>
     </div>
   </main>

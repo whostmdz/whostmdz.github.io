@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,10 +15,15 @@
   <button id="theme-toggle" aria-label="Basculer le thème"></button>
 
   <header>
-    <a href="main.html">
+    <a href="index.html">
       <img src="assets/logo.png" alt="Logo whostmdz" class="site-logo">
     </a>
-    <nav>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="nav-menu">
       <ul>
         <li><a href="projets.html">projets</a></li>
         <li><a href="veille.html">veille</a></li>
@@ -27,7 +33,7 @@
   </header>
 
   <main>
-    <h1 class="main-title">WHOSTMDZ.</h1>
+    <h1 class="main-title" data-text="Thomas Diemoz.">Thomas Diemoz.</h1>
     
     <div class="home-layout">
       <section class="hero">
@@ -36,8 +42,7 @@
         
         <p class="intro">
           Plusieurs années de <a href="projets.html">passion</a> en développement et sécurité informatique. 
-          Étudiant en BTS SIO (SLAM), je travaille sur des projets Java, Web, Linux et prochainement en C. 
-
+          Étudiant en BTS SIO (SLAM), je travaille sur des projets Java, Web, Linux et prochainement en C.
         </p>
 
         <p class="intro">
