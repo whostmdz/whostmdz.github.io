@@ -659,13 +659,11 @@ footer {
   }
 }
 
-@media (max-width: 1024px) { /* eviter pb de titre coupe */
-  .main-title {
-    margin-top: 0;        /* évite que le titre passe sous le header */
-    padding: 0 16px;      /* petite marge horizontale */
-    overflow-wrap: anywhere; /* évite le texte qui dépasse */
+@media (max-width: 1024px) {
+  .home-layout {
+    flex-direction: column;
+    gap: 40px;
   }
-}
   
   .hero {
     max-width: 600px;
