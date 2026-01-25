@@ -213,14 +213,16 @@ main {
   gap: 60px;
   align-items: center;
   justify-content: center;
-  max-width: 1400px;
+  max-width: 1600px;
   width: 100%;
+  padding: 0 20px;
 }
 
 /* Hero section */
 .hero {
   max-width: 600px;
-  flex-shrink: 0;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 h2 {
@@ -278,20 +280,24 @@ h3 {
   color: var(--theme-background);
 }
 
-/* ASCII art */
+/* ASCII art - Responsive dynamique */
 .ascii-sidebar {
-  flex-shrink: 0;
-  overflow: hidden;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ascii-art {
-  font-size: 15px;
-  line-height: 1.2;
+  font-size: clamp(5px, 0.6vw, 11px);
+  line-height: 1;
   white-space: pre;
   color: var(--muted);
-  max-height: 70vh;
-  overflow: hidden;
   font-family: monospace;
+  overflow: visible;
+  display: block;
 }
 
 /* Content pages (projets, contact, veille) */
@@ -618,6 +624,62 @@ footer {
   text-decoration: underline;
 }
 
+/* Responsive pour écrans moyens/larges */
+@media (max-width: 1400px) {
+  .home-layout {
+    gap: 40px;
+    max-width: 1200px;
+  }
+  
+  .ascii-art {
+    font-size: clamp(5px, 0.7vw, 10px);
+  }
+  
+  .ascii-sidebar {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .home-layout {
+    gap: 30px;
+    max-width: 1000px;
+  }
+  
+  .hero {
+    max-width: 500px;
+  }
+  
+  .ascii-art {
+    font-size: clamp(5px, 0.8vw, 9px);
+  }
+  
+  .ascii-sidebar {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 1024px) { /* eviter pb de titre coupe */
+  .main-title {
+    margin-top: 0;        /* évite que le titre passe sous le header */
+    padding: 0 16px;      /* petite marge horizontale */
+    overflow-wrap: anywhere; /* évite le texte qui dépasse */
+  }
+}
+  
+  .hero {
+    max-width: 600px;
+  }
+  
+  .ascii-sidebar {
+    max-width: 100%;
+  }
+  
+  .ascii-art {
+    font-size: 8px;
+  }
+}
+
 /* Responsive Mobile */
 @media (max-width: 768px) {
   /* Menu hamburger pour mobile */
@@ -687,6 +749,7 @@ footer {
   .home-layout {
     flex-direction: column;
     gap: 30px;
+    padding: 0 10px;
   }
   
   .ascii-sidebar {
