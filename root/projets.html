@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="assets/mraw.gif">
+  <title>whostmdz</title>
+</head>
+<body>
+  <div id="blob"></div>
+  <button id="theme-toggle" aria-label="Basculer le thème"></button>
+
+  <header>
+    <a href="index.html">
+      <img src="assets/logo.png" alt="Logo whostmdz" class="site-logo">
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="projets.html">projets</a></li>
+        <li><a href="veille.html">veille</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content-page">
+    <div class="page-container">
+      <div class="page-header">
+        <h1>Mes Projets</h1>
+      </div>
+
+      <div class="projects-list">
+
+        <article class="project-item">
+          <h3><a href="#">2025-11 - Générateur et vérification de Hash</a></h3>
+          <div class="tags">
+            <span class="tag">Python</span>
+          </div>
+          <p>
+            Projet permettant de se familiariser avec le chiffrage et sécurité
+          </p>
+          <div class="project-link">
+            <a href="https://github.com/whostdmz/Gen_Verif_Hash" target="_blank" rel="noopener">Voir sur GitHub →</a>
+          </div>
+        </article>
+
+        <article class="project-item">
+          <h3><a href="#">2025-06 - Gmail_MailDeleter_Cleaner</a></h3>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">OAuth 0</span>
+            <span class="tag">GMAIL API</span>
+          </div>
+          <p>
+            Ligne de commande permettant de supprimer et trier les mails.
+          </p>
+          <div class="project-link">
+            <a href="https://github.com/whostdmz/MailDeleter-Bulk-Gmail-Email-Cleaner" target="_blank" rel="noopener">Voir sur GitHub →</a>
+          </div>
+        </article>
+
+        <article class="project-item">
+          <h3><a href="#">2024-08 - Mouvement des pièces d'échecs</a></h3>
+          <div class="tags">
+            <span class="tag">Python</span>
+          </div>
+          <p>
+            Projets python simulant les déplacements déplacements des pièces d'échecs.
+          </p>
+          <div class="project-link">
+            <a href="https://github.com/whostdmz/Chess-piece-movement-python" target="_blank" rel="noopener">Voir sur GitHub →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>design with <3 - whostmdz</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
