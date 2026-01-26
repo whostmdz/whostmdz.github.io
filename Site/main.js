@@ -58,7 +58,7 @@ function follow(e) {
 }
 document.addEventListener("mousemove", follow);
 
-// Slowly rotate --theme-color hue
+// Slowly rotate
 function colors() {
   setInterval(() => {
     const style = document.documentElement.style;
