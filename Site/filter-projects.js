@@ -73,7 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateNoProjectsMessage() {
     let noProjectsMsg = projectsList.querySelector('.no-projects-msg');
-    const visibleProjects = projectsList.querySelectorAll('.project-item[style="display: block"]').length;
+    const projects = projectsList.querySelectorAll('.project-item');
+    let visibleProjects = 0;
+    
+    projects.forEach(project => { //comme ca ca affiche pas le message 
+      if (project.style.display !== 'none') {
+        visibleProjects++;
+      }
+    });
     
     if (visibleProjects === 0 && selectedTags.size > 0) {
       if (!noProjectsMsg) {
@@ -87,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // rester tags
+  // reset tags
   function resetFilters() {
     selectedTags.clear();
     const buttons = tagsFilterContainer.querySelectorAll('.filter-tag-btn');
