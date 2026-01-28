@@ -58,7 +58,7 @@ function follow(e) {
 }
 document.addEventListener("mousemove", follow);
 
-// Slowly rotate --theme-color hue
+// Slowly rotate
 function colors() {
   setInterval(() => {
     const style = document.documentElement.style;
@@ -76,7 +76,7 @@ let originalTitle = document.title;
 
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) {
-    document.title = "👋 Reviens ! - whostmdz";
+    document.title = "Reviens ! - whostmdz";
   } else {
     document.title = originalTitle;
   }
@@ -84,7 +84,7 @@ document.addEventListener("visibilitychange", () => {
 
 // Also handle when window loses focus
 window.addEventListener("blur", () => {
-  document.title = "👋 Reviens ! - whostmdz";
+  document.title = "Reviens ! - whostmdz";
 });
 
 window.addEventListener("focus", () => {
