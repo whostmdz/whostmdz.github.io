@@ -38,12 +38,21 @@
         <h1>Mes Projets</h1>
       </div>
 
-      <div class="projects-list">
+      <div class="filter-section">
+        <h3>Filtrer par tags</h3>
+        <div id="tags-filter" class="tags-filter">
+          <!-- Les tags seront générés automatiquement -->
+        </div>
+        <button id="reset-filter" class="reset-btn">Réinitialiser</button>
+      </div>
 
-        <article class="project-item">
+      <div class="projects-list" id="projects-list">
+
+        <article class="project-item" data-tags="Python,Sécurité">
           <h3><a href="#">2025-11 - Générateur et vérification de Hash</a></h3>
           <div class="tags">
-            <span class="tag">Python</span>
+            <span class="tag" data-tag="Python">Python</span>
+            <span class="tag" data-tag="Sécurité">Sécurité</span>
           </div>
           <p>
             Projet permettant de se familiariser avec le chiffrage et sécurité
@@ -53,12 +62,12 @@
           </div>
         </article>
 
-        <article class="project-item">
+        <article class="project-item" data-tags="Python,API,Outils">
           <h3><a href="#">2025-06 - Gmail_MailDeleter_Cleaner</a></h3>
           <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">OAuth 0</span>
-            <span class="tag">GMAIL API</span>
+            <span class="tag" data-tag="Python">Python</span>
+            <span class="tag" data-tag="API">API</span>
+            <span class="tag" data-tag="Outils">Outils</span>
           </div>
           <p>
             Ligne de commande permettant de supprimer et trier les mails.
@@ -68,10 +77,11 @@
           </div>
         </article>
 
-        <article class="project-item">
+        <article class="project-item" data-tags="Python,Jeux">
           <h3><a href="#">2024-08 - Mouvement des pièces d'échecs</a></h3>
           <div class="tags">
-            <span class="tag">Python</span>
+            <span class="tag" data-tag="Python">Python</span>
+            <span class="tag" data-tag="Jeux">Jeux</span>
           </div>
           <p>
             Projets python simulant les déplacements déplacements des pièces d'échecs.
@@ -90,5 +100,6 @@
   </footer>
 
   <script src="main.js"></script>
+  <script src="filter-projects.js"></script>
 </body>
 </html>

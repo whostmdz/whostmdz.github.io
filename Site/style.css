@@ -213,14 +213,16 @@ main {
   gap: 60px;
   align-items: center;
   justify-content: center;
-  max-width: 1400px;
+  max-width: 1600px;
   width: 100%;
+  padding: 0 20px;
 }
 
 /* Hero section */
 .hero {
   max-width: 600px;
-  flex-shrink: 0;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 h2 {
@@ -278,20 +280,24 @@ h3 {
   color: var(--theme-background);
 }
 
-/* ASCII art */
+/* ASCII art - Responsive dynamique */
 .ascii-sidebar {
-  flex-shrink: 0;
-  overflow: hidden;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ascii-art {
-  font-size: 15px;
-  line-height: 1.2;
+  font-size: clamp(5px, 0.6vw, 11px);
+  line-height: 1;
   white-space: pre;
   color: var(--muted);
-  max-height: 70vh;
-  overflow: hidden;
   font-family: monospace;
+  overflow: visible;
+  display: block;
 }
 
 /* Content pages (projets, contact, veille) */
@@ -321,6 +327,67 @@ main.content-page {
   font-size: 1.1rem;
   color: var(--muted);
   max-width: 800px;
+}
+
+/* Filter section */
+.filter-section {
+  margin-bottom: 50px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid var(--theme-surface);
+}
+
+.filter-section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: var(--theme-text-color);
+}
+
+.tags-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.filter-tag-btn {
+  background: transparent;
+  border: 1px solid var(--theme-color);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.95rem;
+  color: var(--theme-color);
+  cursor: pointer;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.filter-tag-btn:hover {
+  background: var(--theme-surface);
+  transform: translateY(-2px);
+}
+
+.filter-tag-btn.active {
+  background: var(--theme-color);
+  color: var(--theme-background);
+  font-weight: bold;
+}
+
+.reset-btn {
+  background: transparent;
+  border: 1px dashed var(--muted);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.95rem;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.reset-btn:hover {
+  color: var(--theme-color);
+  border-color: var(--theme-color);
 }
 
 /* Projects list */
@@ -382,6 +449,15 @@ main.content-page {
 
 .project-link a:hover {
   text-decoration: underline;
+}
+
+.no-projects-msg {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--muted);
+  font-style: italic;
+  font-size: 1.1rem;
+  grid-column: 1 / -1;
 }
 
 /* Contact page */
@@ -618,6 +694,60 @@ footer {
   text-decoration: underline;
 }
 
+/* Responsive pour écrans moyens/larges */
+@media (max-width: 1400px) {
+  .home-layout {
+    gap: 40px;
+    max-width: 1200px;
+  }
+  
+  .ascii-art {
+    font-size: clamp(5px, 0.7vw, 10px);
+  }
+  
+  .ascii-sidebar {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .home-layout {
+    gap: 30px;
+    max-width: 1000px;
+  }
+  
+  .hero {
+    max-width: 500px;
+  }
+  
+  .ascii-art {
+    font-size: clamp(5px, 0.8vw, 9px);
+  }
+  
+  .ascii-sidebar {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .home-layout {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .hero {
+    max-width: 600px;
+  }
+  
+  .ascii-sidebar {
+    max-width: 100%;
+  }
+  
+  .ascii-art {
+    font-size: 8px;
+  }
+}
+
 /* Responsive Mobile */
 @media (max-width: 768px) {
   /* Menu hamburger pour mobile */
@@ -687,6 +817,7 @@ footer {
   .home-layout {
     flex-direction: column;
     gap: 30px;
+    padding: 0 10px;
   }
   
   .ascii-sidebar {
@@ -788,6 +919,27 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
+  }
+  
+  .filter-section {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+  }
+  
+  .filter-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .tags-filter {
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .filter-tag-btn,
+  .reset-btn {
+    padding: 7px 14px;
+    font-size: 0.9rem;
   }
   
   #theme-toggle {
