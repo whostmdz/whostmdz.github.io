@@ -1,126 +1,104 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="assets/mraw.gif">
-  <title>Thomas Diemoz — Portfolio</title>
-  <script src="load_theme.js"></script>
-  <script defer src="main.js"></script>
+  <title>whostmdz</title>
 </head>
 <body>
-  <canvas id="rain" aria-hidden="true"></canvas>
-  
-  <div class="site-layout">
-    <!-- SIDEBAR GAUCHE -->
-    <nav id="sidebar" class="card">
-      <p class="sidebar-title">whostmdz</p>
-      <div class="sidebar-links">
-        <a href="#about">À propos</a>
-        <a href="#projets">Projets</a>
-        <a href="#competences">Compétences</a>
-        <a href="#contact">Contact</a>
-        <hr>
-
-      </div>
-    </nav>
-
-    <div class="main-content-wrapper">
-      <div id="everything" class="container">
-        <main id="content" class="card">
-          <div class="card-row">
-            <div style="flex:1 1 auto;min-width:220px">
-              <p class="hero-title">Salut, je suis <span id="changing-title" class="nice-text">Whostmdz</span></p>
-              <p id="links">
-                <a id="theme-toggle" aria-label="Basculer le thème"></a>
-                <a href="https://github.com/whostdmz" target="https://github.com/whostdmz" rel="noopener">GitHub</a>
-                <a href="mailto:thomasdiemoz@gmail.com">Email</a>
-                <a href="cv_stage_fr.pdf" target="cv_stage_fr.pdf" rel="noopener">CV</a>
-              </p>
-            </div>
-          </div>
-
-          <h2 id="about">À propos</h2>
-          <p class="content-about-me">
-            <span class="nice-text wavify" style="color: var(--theme-color);">tl;dr</span> Salut ! Je suis Diemoz Thomas. Je parle aux ordinateurs et parfois ils me répondent.
-            Étudiant en BTS SIO (SLAM), passionné de langage bas niveau et Linux.
-            Fan d'accessibilité, de CTF et d'automatisation. Disponible pour un stage de 8 semaines en 2026.
-          </p>
-
-          <div id="facts">
-            Une info: <a id="refreshlink" aria-label="Générer nouvelle info"></a>
-            <a id="randlink" href="#" target="_blank" rel="noopener">...</a>
-          </div>
-
-          <section id="projets">
-            <h2>Projets</h2>
-            <div class="grid">
-              <article class="project">
-                <h3>Gmail-MailDeleter-Cleaner</h3>
-                <p>Ligne de commande permettant de supprimer et trier les mails.</p>
-                <p><span class="tag">Python</span><span class="tag">Gmail API</span><span class="tag">OAuth2</span></p>
-                <p><a href="https://github.com/whostdmz/MailDeleter-Bulk-Gmail-Email-Cleaner" target="https://github.com/whostdmz/MailDeleter-Bulk-Gmail-Email-Cleaner" rel="noopener">Code</a></p>
-              </article>
-              <article class="project">
-                <h3>Mouvement des pièces d'échecs</h3>
-                <p>Projets python simulant les déplacements déplacements des pièces d'échecs</p>
-                <p><span class="tag">Python</span></p>
-                <p><a href="https://github.com/whostdmz/Chess-piece-movement-python">Code</a></p>
-              </article>
-              <article class="project">
-                <h3>MemoLieu</h3>
-                <p>projet a mettre</p>
-                <p><span class="tag">Node.js</span><span class="tag">ejs</span><span class="tag">Express</span></p>
-                <p><a href="#">Repo</a></p>
-              </article>
-            </div>
-          </section>
-
-          <section id="competences">
-            <h2>Compétences</h2>
-            <p><span class="tag">Python</span><span class="tag">Java</span><span class="tag">SQL</span><span class="tag">Bash</span><span class="tag">C</span><span class="tag">Linux</span><span class="tag">Git</span></p>
-          </section>
-
-          <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:thomasdiemoz@gmail.com" rel="me">thomasdiemoz@gmail.com</a></p>
-            <details>
-              <summary>Clé PGP publique</summary>
-              <p style="color: var(--muted);">Voici la clé PGP à utiliser si vous désirez chiffrer des messages à mon attention. N'oubliez pas d'envoyer votre clé publique sinon je ne pourrais pas envoyer de réponse chiffrée.</p>
-              <p>Empreinte: <code>22A8 B4E9 04C7 62BB C39E 7870 A317 7973 6BC9 81EB</code></p>
-              <p><a href="public.asc" download>Télécharger la clé (.asc)</a></p>
-              <pre style="white-space: pre-wrap; word-break: break-word;">
------BEGIN PGP PUBLIC KEY BLOCK-----
-
-mDMEaPbDWBYJKwYBBAHaRw8BAQdARQ1lVV30RHQVSv4hDZpOnnKII5uyPybSRdQx
-yn/1mkK0H1Rob21hcyA8dGhvbWFzZGllbW96QGdtYWlsLmNvbT6IkAQTFgoAOBYh
-BCKotOkEx2K7w554cKMXeXNryYHrBQJo9sNYAhsDBQsJCAcCBhUKCQgLAgQWAgMB
-Ah4BAheAAAoJEKMXeXNryYHr7R0A/3wms55XyapJI8NELaeOpCnWi7txtyIeAvZe
-UGRB4E10AP0VyYBpXu2labgSI/fH2nzz1LTjFoRL+lCQKS5bE8iIAbg4BGj2w1gS
-CisGAQQBl1UBBQEBB0CPhFZvkADmrre++nEORP+O3Zn+AfUXM7RFBhOYdHmUdgMB
-CAeIeAQYFgoAIBYhBCKotOkEx2K7w554cKMXeXNryYHrBQJo9sNYAhsMAAoJEKMX
-eXNryYHrTqEBAJ5F3ysBVakjhmSjYAvRcRhOffzvBlXDMXEhYSJcxFZ9AQDSn7o/
-2/KPaOECnYkqqsXiOuNQTuZAd0BjnRNOTj6DDQ==
-=j8qS
------END PGP PUBLIC KEY BLOCK-----
-              </pre>
-            </details>
-          </section>
-        </main>
-      </div>
-
-      <footer>
-        <img src="assets/firefox.gif" alt="">
-        <img src="assets/powered-by-debian.gif" alt="">
-        <img src="assets/vim.gif" alt="">
-      </footer>
-      <p id="low">design with <3 — whostmdz</p>
-    </div>
-  </div>
-
   <div id="blob"></div>
+  <button id="theme-toggle" aria-label="Basculer le thème"></button>
+
+  <header>
+    <a href="index.html">
+      <img src="assets/logo.png" alt="Logo whostmdz" class="site-logo">
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="projets.html">projets</a></li>
+        <li><a href="veille.html">veille</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="main-title" data-text="Thomas Diemoz.">Thomas Diemoz.</h1>
+    
+    <div class="home-layout">
+      <section class="hero">
+        <h2>Étudiant & Développeur</h2>
+        <h3>BTS SIO SLAM</h3>
+        
+        <p class="intro">
+          Plusieurs années de <a href="projets.html">passion</a> en développement et sécurité informatique. 
+          Étudiant en BTS SIO (SLAM), je travaille sur des projets Java, Web, Linux et prochainement en C.
+        </p>
+
+        <p class="intro">
+          En savoir plus sur mes <a href="projets.html">projets</a>.
+        </p>
+
+        <div class="social-links">
+          <a href="https://github.com/whostdmz" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:thomasdiemoz@gmail.com">Email</a>
+          <a href="cv_stage_fr.pdf" target="_blank" rel="noopener">CV</a>
+        </div>
+      </section>
+      
+      <aside class="ascii-sidebar">
+        <pre class="ascii-art">                                          ....
+                                       ,;;'''';;,                    ,;;;;,
+                             ,        ;;'      `;;,               .,;;;'   ;
+                          ,;;;       ;;          `;;,';;;,.     ,%;;'     '
+                        ,;;,;;       ;;         ,`;;;, `;::.  %%;'
+                       ;;;,;;;       `'       ,;;; ;;,;;, `::,%%;'
+                       ;;;,;;;,          .,%%%%%'% ;;;;,;;   %;;;
+             ,%,.      `;;;,;;;,    .,%%%%%%%%%'%; ;;;;;,;;  %;;;
+            ;,`%%%%%%%%%`;;,;;'%%%%%%%%%%%%%'%%'  `;;;;;,;, %;;;
+            ;;;`%%%%%%%%%%%,; ..`%%%%%%%%;'%%%'    `;;;;,;; %%;;
+             `;;;;;`%%%%%,;;/, .. `"""'',%%%%%      `;;;;;; %%;;,
+                `;;;;;;;,;;/////,.    ,;%%%%%%%        `;;;;,`%%;;
+                       ;;;/%%%%,%///;;;';%%%%%%,          `;;;%%;;,
+                      ;;;/%%%,%%%%%/;;;';;'%%%%%,             `%%;;
+                     .;;/%%,%%%%%//;;'  ;;;'%%%%%,             %%;;,
+                     ;;//%,%%%%//;;;'   `;;;;'%%%%             `%;;;
+                     ;;//%,%//;;;;'      `;;;;'%%%              %;;;,
+                     `;;//,/;;;'          `;;;'%%'              `%;;;
+                       `;;;;'               `;'%'                `;;;;
+                                              '      .,,,.        `;;;;
+                                                  ,;;;;;;;;;;,     `;;;;
+                                                 ;;;'    ;;;,;;,    `;;;;
+                                                 ;;;      ;;;;,;;.   `;;;;
+                                                  `;;      ;;;;;,;;   ;;;;
+                                                    `'      `;;;;,;;  ;;;;
+                                                               `;;,;, ;;;;
+                                                                  ;;, ;;;;
+                                                                    ';;;;;
+                                                                     ;;;;;
+                                                                    .;;;;'
+                                                                   .;;;;'
+                                                                  ;;;;;'
+                                                                 ,;;;;'
+</pre>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p>design with <3 - whostmdz</p>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
