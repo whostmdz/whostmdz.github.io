@@ -24,30 +24,30 @@ Le projet est hébergé via les Github Pages et est accessible en ligne.
 
 /
 ├── index.html
-│
 ├── pages/
-│ ├── projets.html
-│ └── contact.html 
-│ └── veille.html
+│   ├── projects.html
+│   ├── contact.html
+│   └── veille.html
 │
 ├── css/
-│ └── style.css
+│   └── style.css
 │
 ├── js/
-│ ├── main.js
-│ └── load_themes.js
-│ └── filter-projects.js
-│ └── veille-rss.js
+│   ├── main.js
+│   ├── load_themes.js
+│   ├── filter-projects.js
+│   └── veille-rss.js
 │
 ├── fonts/
-│ ├──  Agekia.ttf
-│ └── Kozifa.ttf
+│   ├── Agekia.ttf
+│   └── Kozifa.ttf
 │
 ├── assets/
-│ ├──  refresh-dark.svg
-│ └── photodemoi.jpg
-│ └── logo.png
-│ └── cv_stage_fr.pdf
-│ └── cv_stage_en.pdf
-│
-└── public.asc
+│   ├── photodemo.jpg
+│   ├── logo.png
+│   ├── refresh-dark.svg
+│   ├── cv_stage_fr.pdf
+│   └── cv_stage_en.pdf
+│ 
+├── public.asc
+└── README.md
