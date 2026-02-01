@@ -1,0 +1,53 @@
+## Portfolio
+## Présentation du projet
+Ce repo contient mon portfolio, réalisé dans un premier temps  dans le cadre de projet personnel, et amélioré dans le cadre du BTS SIO.  
+Il a pour objectif de présenter mon profil, mon parcours, mes compétences ainsi que mes projets.
+
+Le projet est hébergé via les Github Pages et est accessible en ligne.
+
+🔗 **Lien du site :**  
+- https://whostmdz.github.io
+- https://whostmdz.fr
+
+---
+
+## Technologies utilisées
+- **HTML5**
+- **CSS3**
+- **JavaScript**
+- **Git**
+- **GitHub Pages**
+
+---
+
+## Structure du projet
+
+/
+├── index.html
+│
+├── pages/
+│ ├── projets.html
+│ └── contact.html 
+│ └── veille.html
+│
+├── css/
+│ └── style.css
+│
+├── js/
+│ ├── main.js
+│ └── load_themes.js
+│ └── filter-projects.js
+│ └── veille-rss.js
+│
+├── fonts/
+│ ├──  Agekia.ttf
+│ └── Kozifa.ttf
+│
+├── assets/
+│ ├──  refresh-dark.svg
+│ └── photodemoi.jpg
+│ └── logo.png
+│ └── cv_stage_fr.pdf
+│ └── cv_stage_en.pdf
+│
+└── public.asc
