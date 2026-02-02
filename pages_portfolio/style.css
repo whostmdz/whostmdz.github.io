@@ -1,0 +1,67 @@
+/* Style général du body */
+body {
+    padding-top: 56px;
+}
+
+/* Section principale avec fond gris */
+.main-header {
+    background-color: #e9ecef;
+    padding: 2rem 0;
+    margin-bottom: 0;
+}
+
+.main-header h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.main-header .row {
+    align-items: center;
+}
+
+.main-header img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Bouton personnalisé bleu */
+.btn-nicolas {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-nicolas:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Section de contenu avec fond blanc */
+.content-section {
+    background-color: #fff;
+    padding: 3rem 0;
+}
+
+.content-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+/* Bouton secondaire */
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+/* Footer */
+footer {
+    background-color: #f8f9fa;
+    padding: 1rem 0;
+    margin-top: 3rem;
+}
+
+footer #copyright {
+    margin: 0;
+    padding: 1rem 0;
+}
