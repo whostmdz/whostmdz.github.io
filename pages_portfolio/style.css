@@ -26,13 +26,13 @@ body {
 }
 
 /* Bouton personnalisé bleu */
-.btn-nicolas {
+.btn-thomas {
     color: #fff;
     background-color: #007bff;
     border-color: #007bff;
 }
 
-.btn-nicolas:hover {
+.btn-thomas:hover {
     background-color: #0056b3;
     border-color: #0056b3;
 }
