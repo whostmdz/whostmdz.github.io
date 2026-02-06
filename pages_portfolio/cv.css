@@ -34,7 +34,7 @@ body {
     letter-spacing: -1px;
 }
 #cv-intro h1 span {
-    color: rgb(226,0,26);
+    color: rgb(39, 5, 26);
 }
 #cv-intro::after {
     background: url('images/ligne.png'); /* Dossier "images" est un sous-
@@ -53,7 +53,7 @@ body {
     margin-bottom: 15px;
 }
 .rubrique h2 {
-    color: rgb(226,0,26);
+    color: rgb(68, 20, 26);
 }
 .rubrique h2::before{
     margin-right: 5px;
@@ -80,7 +80,7 @@ body {
     top: 0;
     display: block;
     background: linear-gradient(to bottom, #ffffff 0%,
-        #E2001A 7%, #E2001A, #ffffff 100%);
+        #8b1f2c 7%, #3f161a, #8d8989 100%);
     content:"";
 }
 #parcours li {
