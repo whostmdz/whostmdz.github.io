@@ -20,13 +20,13 @@
 
 .contact-icon-large {
     font-size: 3rem;
-    color: #007bff;
+    color: #661e56;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
 
 .contact-card h2 {
-    color: #007bff;
+    color: #661e56;
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -45,7 +45,7 @@
 .contact-highlight {
     background-color: #e7f3ff;
     padding: 1rem;
-    border-left: 4px solid #007bff;
+    border-left: 4px solid #661e56;
     border-radius: 4px;
     font-size: 1rem;
 }
@@ -104,7 +104,7 @@
 }
 
 .contact-form-wrapper h2 {
-    color: #007bff;
+    color: #661e56;
     margin-bottom: 2rem;
 }
 
@@ -123,7 +123,7 @@
 }
 
 .contact-form-wrapper .form-control:focus {
-    border-color: #007bff;
+    border-color: #661e56;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
