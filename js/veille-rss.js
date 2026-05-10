@@ -11,10 +11,16 @@ const RSS_FEEDS = [
   { url: 'https://www.cert.ssi.gouv.fr/feed/',                                              cat: 'Sécurité',       source: 'CERT-FR'         },
   { url: 'https://feeds.feedburner.com/TheHackersNews',                                     cat: 'Sécurité',       source: 'The Hacker News' },
   { url: 'https://www.schneier.com/feed/atom/',                                             cat: 'Sécurité',       source: 'Schneier on Sec' },
+  { url: 'https://phrack.org/index_latest',                                                 cat: 'Sécurité',       source: 'Phrack'},
+  
   // Reverse / Pwn / CTF
   { url: 'https://googleprojectzero.blogspot.com/feeds/posts/default',                      cat: 'Reverse / Pwn',  source: 'Project Zero'    },
   { url: 'https://ctftime.org/news/rss/',                                                   cat: 'Reverse / Pwn',  source: 'CTFtime'         },
   { url: 'https://ret2systems.com/feed.xml',                                                cat: 'Reverse / Pwn',  source: 'ret2systems'     },
+  { url: 'https://blog.quarkslab.com/',                                                cat: 'Reverse / Pwn',  source: 'Quarkslab'       },
+  { url: 'https://connormcgarr.github.io/',                                                cat: 'Reverse / Pwn',  source: 'Connormcgarr'       },
+  { url: 'https://0x434b.dev/',                                                cat: 'Reverse / Pwn',  source: '0x434b'       },
+  { url: 'https://ctf.re/',                                                cat: 'Reverse / Pwn',  source: 'ctf.re'       },
   // Linux / Bash / Sys
   { url: 'https://www.phoronix.com/rss.php',                                                cat: 'Linux / Bash',   source: 'Phoronix'        },
   { url: 'https://lwn.net/headlines/rss',                                                   cat: 'Linux / Bash',   source: 'LWN.net'         },
