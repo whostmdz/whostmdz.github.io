@@ -1,144 +1,1048 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="icon" type="image/x-icon" href="assets/mraw.gif">
-  <title>whostmdz</title>
-</head>
-<body>
-  <div id="blob"></div>
-  <button id="theme-toggle" aria-label="Basculer le thème"></button>
 
-  <header>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <title>Projets — whostmdz</title>
+
+</head>
+
+
+<body>
+
+<div id="blob"></div>
+
+<button id="theme-toggle" aria-label="Basculer le thème"></button>
+
+
+<header>
+
     <a href="../index.html">
-      <img src="../assets/logo.png" alt="Logo whostmdz" class="site-logo">
+
+        <img
+            src="../assets/logo.png"
+            alt="Logo whostmdz"
+            class="site-logo"
+        >
+
     </a>
 
+
+    <button
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-label="Menu"
+    >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+
     <nav id="nav-menu">
-      <ul>
-        <li><a href="projets.html">projets</a></li>
-        <li><a href="veille.html">veille</a></li>
-        <li><a href="contact.html">contact</a></li>
-        <!--<li><a href="../pages_portfolio/index(1).html">tp Portfolio</a></li>   A CHANGER !! -->
-      </ul>
+
+        <ul>
+
+            <li>
+                <a href="projets.html">projets</a>
+            </li>
+
+            <li>
+                <a href="veille.html">veille</a>
+            </li>
+
+            <li>
+                <a href="contact.html">contact</a>
+            </li>
+
+        </ul>
+
     </nav>
-  </header>
 
-  <main class="content-page">
+</header>
+
+
+<main class="content-page">
+
     <div class="page-container">
-      <div class="page-header">
-        <h1>Mes Projets</h1>
-      </div>
 
-      <div class="filter-section">
-        <h3>Filtrer par tags</h3>
-        <div id="tags-filter" class="tags-filter">
-          <!-- Les tags seront générés automatiquement -->
+
+        <!-- ===================================================== -->
+        <!-- HEADER -->
+        <!-- ===================================================== -->
+
+        <div class="page-header">
+
+            <h1>Mes projets</h1>
+
+            <p>
+                Une sélection de projets personnels, académiques et professionnels
+                réalisés autour du développement, de l'administration système et de
+                la cybersécurité.
+            </p>
+
         </div>
-        <button id="reset-filter" class="reset-btn">Réinitialiser</button>
-      </div>
-
-      <div class="projects-list" id="projects-list">
 
 
-       <article class="project-item" data-tags="SDR,Rust,MachineLearning,Linux">
-  <h3><a href="#">2026-09 - MIRAGE (en cours)</a></h3>
-  <div class="tags">
-    <span class="tag" data-tag="SDR">SDR</span>
-    <span class="tag" data-tag="Rust">Rust</span>
-    <span class="tag" data-tag="MachineLearning">Machine Learning</span>
-    <span class="tag" data-tag="Linux">Linux</span>
-  </div>
-  <p>
-    Plateforme de détection de spoofing et de brouillage sur les systèmes de surveillance des transports (ADS-B, AIS, GPS), combinant réception radio logicielle (RTL-SDR), analyse de cohérence cinématique, fingerprinting RF par apprentissage automatique, et un pipeline temps réel en Rust/Go.
-  </p>
-  <div class="project-link">
-    <a href="https://github.com/whostmdz/mirage-project" target="_blank" rel="noopener">Voir sur GitHub →</a>
-  </div>
-</article> 
+        <!-- ===================================================== -->
+        <!-- FILTRE -->
+        <!-- ===================================================== -->
 
-      <article class="project-item" data-tags="Internship,Python,Ansible">
-        <h3><a href="#">2026-05 - To-Do Project</a></h3>
-          <div class="tags">
-            <span class="tag" data-tag="Internship">Internship</span>
-            <span class="tag" data-tag="Python">Python</span>
-            <span class="tag" data-tag="Ansible">Ansible</span>
-                  
-          </div>
-          <p>
-                  Conception et déploiement d’une infrastructure conteneurisée avec Docker et Ansible, intégrant une application Flask, une base PostgreSQL et une supervision avec Prometheus et Grafana.
+        <div class="filter-section">
 
-          </p>
-          <div class="project-link">
-            <a href="https://github.com/whostmdz/To-Do-project-Internship" target="_blank" rel="noopener">Voir sur GitHub →</a>
-          </div>
-      </article>
+            <h3>Filtrer par tags</h3>
+
+            <div id="tags-filter" class="tags-filter"></div>
+
+            <button
+                id="reset-filter"
+                class="reset-btn"
+            >
+                Réinitialiser
+            </button>
+
+        </div>
 
 
+        <!-- ===================================================== -->
+        <!-- PROJETS -->
+        <!-- ===================================================== -->
 
-        <article class="project-item" data-tags="Projet Personnel,Python,Sécurité">
-          <h3><a href="#">2025-11 - Générateur et vérification de Hash</a></h3>
-          <div class="tags">
-            <span class="tag" data-tag="Projet Personnel">Projet Personnel</span>
-            <span class="tag" data-tag="Python">Python</span>
-            <span class="tag" data-tag="Sécurité">Sécurité</span>
-            
-          </div>
-          <p>
-            Projet permettant de se familiariser avec le chiffrage et sécurité.
-          </p>
-          <div class="project-link">
-            <a href="https://github.com/whostdmz/Gen_Verif_Hash" target="_blank" rel="noopener">Voir sur GitHub →</a>
-          </div>
-        </article>
+        <div
+            class="projects-list"
+            id="projects-list"
+        >
 
-        <article class="project-item" data-tags="Projet Personnel,Python,API,Outils">
-          <h3><a href="#">2025-06 - Gmail_MailDeleter_Cleaner</a></h3>
-          <div class="tags">
-            <span class="tag" data-tag="Projet Personnel">Projet Personnel</span>
-            <span class="tag" data-tag="Python">Python</span>
-            <span class="tag" data-tag="API">API</span>
-            <span class="tag" data-tag="Outils">Outils</span>
-            
-          </div>
-          <p>
-            Ligne de commande permettant de supprimer et trier les mails.
-          </p>
-          <div class="project-link">
-            <a href="https://github.com/whostdmz/MailDeleter-Bulk-Gmail-Email-Cleaner" target="_blank" rel="noopener">Voir sur GitHub →</a>
-          </div>
-        </article>
 
-        <article class="project-item" data-tags="Projet Académique,Python,Jeux">
-          <h3><a href="#">2024-08 - Mouvement des pièces d'échecs</a></h3>
-          <div class="tags">
-            <span class="tag" data-tag="Projet Académique">Projet Académique</span>
-            <span class="tag" data-tag="Python">Python</span>
-            <span class="tag" data-tag="Jeux">Jeux</span>
-            
-          </div>
-          <p>
-            Projets python simulant les déplacements déplacements des pièces d'échecs.
-          </p>
-          <div class="project-link">
-            <a href="https://github.com/whostdmz/Chess-piece-movement-python" target="_blank" rel="noopener">Voir sur GitHub →</a>
-          </div>
-        </article>
+            <!-- ================================================= -->
+            <!-- MIRAGE -->
+            <!-- ================================================= -->
 
-      </div>
+            <article
+                class="project-item"
+                data-tags="SDR,Rust,MachineLearning,Linux"
+            >
+
+                <button
+                    class="project-header"
+                    type="button"
+                    aria-expanded="false"
+                >
+
+                    <div class="project-title">
+
+                        <span class="project-date">
+                            2026-09 · EN COURS
+                        </span>
+
+                        <h3>MIRAGE</h3>
+
+                        <p class="project-short-description">
+                            Plateforme de détection de spoofing et de brouillage
+                            sur les systèmes de surveillance des transports.
+                        </p>
+
+                        <div class="tags">
+
+                            <span class="tag">SDR</span>
+                            <span class="tag">Rust</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Linux</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="project-toggle">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="project-details">
+
+                    <div class="project-details-inner">
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Présentation</h4>
+
+                            <p>
+                                MIRAGE est un projet de recherche et de développement
+                                consacré à la détection d'anomalies et d'attaques
+                                pouvant affecter les systèmes de surveillance
+                                reposant sur des signaux radio.
+                            </p>
+
+                            <p>
+                                Le projet s'intéresse notamment aux systèmes
+                                ADS-B, AIS et GPS et cherche à identifier des
+                                comportements suspects tels que le spoofing ou
+                                le brouillage.
+                            </p>
+
+                        </section>
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Objectif</h4>
+
+                            <p>
+                                L'objectif est de construire une plateforme capable
+                                de réceptionner des signaux radio, d'en extraire
+                                des informations pertinentes et de détecter
+                                automatiquement des incohérences.
+                            </p>
+
+                        </section>
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Ce que j'ai appris</h4>
+
+                            <ul>
+
+                                <li>
+                                    Utilisation d'un RTL-SDR pour la réception
+                                    et l'analyse de signaux radio.
+                                </li>
+
+                                <li>
+                                    Compréhension des problématiques liées au
+                                    spoofing et au brouillage radio.
+                                </li>
+
+                                <li>
+                                    Analyse de données et détection d'anomalies.
+                                </li>
+
+                                <li>
+                                    Découverte de Rust pour développer des
+                                    composants performants.
+                                </li>
+
+                                <li>
+                                    Utilisation de Linux pour construire
+                                    l'environnement de développement et
+                                    d'expérimentation.
+                                </li>
+
+                                <li>
+                                    Premières expérimentations autour du
+                                    fingerprinting RF et du Machine Learning.
+                                </li>
+
+                            </ul>
+
+                        </section>
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Technologies</h4>
+
+                            <div class="project-technologies">
+
+                                <span class="tag">Rust</span>
+                                <span class="tag">Go</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">RTL-SDR</span>
+                                <span class="tag">Linux</span>
+                                <span class="tag">Machine Learning</span>
+                                <span class="tag">ADS-B</span>
+                                <span class="tag">AIS</span>
+                                <span class="tag">GPS</span>
+
+                            </div>
+
+                        </section>
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Difficultés rencontrées</h4>
+
+                            <p>
+                                Le principal défi réside dans la distinction entre
+                                une véritable anomalie et une variation normale
+                                du signal. Le projet nécessite donc de combiner
+                                plusieurs indicateurs plutôt que de se baser sur
+                                une seule donnée.
+                            </p>
+
+                        </section>
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Prochaines étapes</h4>
+
+                            <ul>
+
+                                <li>
+                                    Améliorer le pipeline de traitement temps réel.
+                                </li>
+
+                                <li>
+                                    Développer les modèles de fingerprinting RF.
+                                </li>
+
+                                <li>
+                                    Ajouter davantage de sources de données.
+                                </li>
+
+                                <li>
+                                    Améliorer la visualisation des anomalies.
+                                </li>
+
+                            </ul>
+
+                        </section>
+
+
+                        <div class="project-link">
+
+                            <a
+                                href="https://github.com/whostmdz/mirage-project"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Voir sur GitHub →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- ================================================= -->
+            <!-- TODO -->
+            <!-- ================================================= -->
+
+            <article
+                class="project-item"
+                data-tags="Internship,Python,Ansible"
+            >
+
+                <button
+                    class="project-header"
+                    type="button"
+                    aria-expanded="false"
+                >
+
+                    <div class="project-title">
+
+                        <span class="project-date">
+                            2026-05 · TERMINÉ
+                        </span>
+
+                        <h3>To-Do Project</h3>
+
+                        <p class="project-short-description">
+                            Infrastructure conteneurisée avec Docker, Ansible,
+                            Flask, PostgreSQL, Prometheus et Grafana.
+                        </p>
+
+                        <div class="tags">
+
+                            <span class="tag">Internship</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Ansible</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="project-toggle">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="project-details">
+
+                    <div class="project-details-inner">
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Présentation</h4>
+
+                            <p>
+                                Projet réalisé dans le cadre de mon expérience
+                                professionnelle autour de la conception et du
+                                déploiement d'une infrastructure applicative
+                                conteneurisée.
+                            </p>
+
+                            <p>
+                                L'infrastructure intègre une application Flask,
+                                une base de données PostgreSQL ainsi qu'une
+                                solution de supervision basée sur Prometheus
+                                et Grafana.
+                            </p>
+
+                        </section>
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Objectif</h4>
+
+                            <p>
+                                L'objectif était de mettre en place une
+                                infrastructure reproductible et facilement
+                                déployable, tout en intégrant des outils
+                                permettant de superviser son fonctionnement.
+                            </p>
+
+                        </section>
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Ce que j'ai appris</h4>
+
+                            <ul>
+
+                                <li>
+                                    Création et gestion de conteneurs Docker.
+                                </li>
+
+                                <li>
+                                    Automatisation du déploiement avec Ansible.
+                                </li>
+
+                                <li>
+                                    Mise en place d'une application Flask.
+                                </li>
+
+                                <li>
+                                    Utilisation de PostgreSQL pour la persistance
+                                    des données.
+                                </li>
+
+                                <li>
+                                    Mise en place de métriques avec Prometheus.
+                                </li>
+
+                                <li>
+                                    Création de tableaux de bord avec Grafana.
+                                </li>
+
+                                <li>
+                                    Compréhension de l'organisation d'une
+                                    infrastructure applicative complète.
+                                </li>
+
+                            </ul>
+
+                        </section>
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Technologies</h4>
+
+                            <div class="project-technologies">
+
+                                <span class="tag">Python</span>
+                                <span class="tag">Flask</span>
+                                <span class="tag">Docker</span>
+                                <span class="tag">Ansible</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">Prometheus</span>
+                                <span class="tag">Grafana</span>
+                                <span class="tag">Linux</span>
+
+                            </div>
+
+                        </section>
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Difficultés rencontrées</h4>
+
+                            <p>
+                                Une partie importante du projet consistait à
+                                faire communiquer correctement les différents
+                                services et à garantir leur déploiement de
+                                manière reproductible.
+                            </p>
+
+                        </section>
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Résultat</h4>
+
+                            <p>
+                                Le projet permet de disposer d'une infrastructure
+                                complète dans laquelle l'application, la base
+                                de données et la supervision peuvent être
+                                déployées de manière automatisée.
+                            </p>
+
+                        </section>
+
+
+                        <div class="project-link">
+
+                            <a
+                                href="https://github.com/whostmdz/To-Do-project-Internship"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Voir sur GitHub →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- ================================================= -->
+            <!-- HASH -->
+            <!-- ================================================= -->
+
+            <article
+                class="project-item"
+                data-tags="Projet Personnel,Python,Sécurité"
+            >
+
+                <button
+                    class="project-header"
+                    type="button"
+                    aria-expanded="false"
+                >
+
+                    <div class="project-title">
+
+                        <span class="project-date">
+                            2025-11 · TERMINÉ
+                        </span>
+
+                        <h3>Générateur et vérification de Hash</h3>
+
+                        <p class="project-short-description">
+                            Outil Python permettant de générer et vérifier des
+                            empreintes cryptographiques.
+                        </p>
+
+                        <div class="tags">
+
+                            <span class="tag">Projet Personnel</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Sécurité</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="project-toggle">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="project-details">
+
+                    <div class="project-details-inner">
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Présentation</h4>
+
+                            <p>
+                                Projet Python permettant de générer des
+                                empreintes cryptographiques et de vérifier
+                                l'intégrité de fichiers ou de données.
+                            </p>
+
+                        </section>
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Objectif</h4>
+
+                            <p>
+                                L'objectif était de comprendre le fonctionnement
+                                des fonctions de hachage et leur utilisation
+                                dans le domaine de la sécurité informatique.
+                            </p>
+
+                        </section>
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Ce que j'ai appris</h4>
+
+                            <ul>
+
+                                <li>
+                                    Compréhension du principe d'une fonction
+                                    de hachage cryptographique.
+                                </li>
+
+                                <li>
+                                    Différence entre chiffrement et hachage.
+                                </li>
+
+                                <li>
+                                    Utilisation de fonctions de hachage
+                                    disponibles en Python.
+                                </li>
+
+                                <li>
+                                    Vérification de l'intégrité de données.
+                                </li>
+
+                                <li>
+                                    Manipulation de fichiers depuis Python.
+                                </li>
+
+                            </ul>
+
+                        </section>
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Technologies</h4>
+
+                            <div class="project-technologies">
+
+                                <span class="tag">Python</span>
+                                <span class="tag">Hash</span>
+                                <span class="tag">SHA-256</span>
+                                <span class="tag">Sécurité</span>
+
+                            </div>
+
+                        </section>
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Résultat</h4>
+
+                            <p>
+                                L'application permet de générer une empreinte
+                                et de comparer cette empreinte avec une valeur
+                                fournie afin de vérifier l'intégrité d'une donnée.
+                            </p>
+
+                        </section>
+
+
+                        <div class="project-link">
+
+                            <a
+                                href="https://github.com/whostdmz/Gen_Verif_Hash"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Voir sur GitHub →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- ================================================= -->
+            <!-- MAIL DELETER -->
+            <!-- ================================================= -->
+
+            <article
+                class="project-item"
+                data-tags="Projet Personnel,Python,API,Outils"
+            >
+
+                <button
+                    class="project-header"
+                    type="button"
+                    aria-expanded="false"
+                >
+
+                    <div class="project-title">
+
+                        <span class="project-date">
+                            2025-06 · TERMINÉ
+                        </span>
+
+                        <h3>Gmail_MailDeleter_Cleaner</h3>
+
+                        <p class="project-short-description">
+                            Outil en ligne de commande permettant de rechercher,
+                            filtrer et supprimer des emails via l'API Gmail.
+                        </p>
+
+                        <div class="tags">
+
+                            <span class="tag">Projet Personnel</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">API</span>
+                            <span class="tag">Outils</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="project-toggle">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="project-details">
+
+                    <div class="project-details-inner">
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Présentation</h4>
+
+                            <p>
+                                Gmail_MailDeleter_Cleaner est un outil CLI développé
+                                en Python permettant de rechercher, filtrer et
+                                supprimer automatiquement des emails dans une
+                                boîte Gmail.
+                            </p>
+
+                        </section>
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Objectif</h4>
+
+                            <p>
+                                Le projet avait pour objectif de découvrir
+                                l'utilisation d'une API externe et d'automatiser
+                                une tâche répétitive de gestion de messagerie.
+                            </p>
+
+                        </section>
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Ce que j'ai appris</h4>
+
+                            <ul>
+
+                                <li>
+                                    Utilisation d'une API REST.
+                                </li>
+
+                                <li>
+                                    Authentification auprès d'un service externe.
+                                </li>
+
+                                <li>
+                                    Manipulation de données provenant d'une API.
+                                </li>
+
+                                <li>
+                                    Création d'une interface en ligne de commande.
+                                </li>
+
+                                <li>
+                                    Gestion des erreurs et des réponses API.
+                                </li>
+
+                            </ul>
+
+                        </section>
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Technologies</h4>
+
+                            <div class="project-technologies">
+
+                                <span class="tag">Python</span>
+                                <span class="tag">Gmail API</span>
+                                <span class="tag">REST API</span>
+                                <span class="tag">CLI</span>
+
+                            </div>
+
+                        </section>
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Résultat</h4>
+
+                            <p>
+                                L'outil permet d'automatiser le nettoyage d'une
+                                boîte mail directement depuis le terminal.
+                            </p>
+
+                        </section>
+
+
+                        <div class="project-link">
+
+                            <a
+                                href="https://github.com/whostmdz/MailDeleter-Bulk-Gmail-Email-Cleaner"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Voir sur GitHub →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- ================================================= -->
+            <!-- CHESS -->
+            <!-- ================================================= -->
+
+            <article
+                class="project-item"
+                data-tags="Projet Académique,Python,Jeux"
+            >
+
+                <button
+                    class="project-header"
+                    type="button"
+                    aria-expanded="false"
+                >
+
+                    <div class="project-title">
+
+                        <span class="project-date">
+                            2024-08 · TERMINÉ
+                        </span>
+
+                        <h3>Mouvement des pièces d'échecs</h3>
+
+                        <p class="project-short-description">
+                            Implémentation en Python des règles de déplacement
+                            des différentes pièces d'un échiquier.
+                        </p>
+
+                        <div class="tags">
+
+                            <span class="tag">Projet Académique</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Jeux</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="project-toggle">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="project-details">
+
+                    <div class="project-details-inner">
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Présentation</h4>
+
+                            <p>
+                                Projet Python simulant les déplacements des
+                                différentes pièces d'un échiquier.
+                            </p>
+
+                            <p>
+                                Chaque pièce possède ses propres règles de
+                                déplacement et les mouvements sont vérifiés
+                                avant d'être considérés comme valides.
+                            </p>
+
+                        </section>
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Objectif</h4>
+
+                            <p>
+                                L'objectif était de mettre en pratique les
+                                notions fondamentales de programmation,
+                                notamment les conditions, les fonctions,
+                                les structures de données et la logique
+                                algorithmique.
+                            </p>
+
+                        </section>
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Ce que j'ai appris</h4>
+
+                            <ul>
+
+                                <li>
+                                    Modélisation d'un problème informatique.
+                                </li>
+
+                                <li>
+                                    Création de fonctions en Python.
+                                </li>
+
+                                <li>
+                                    Utilisation de conditions et de boucles.
+                                </li>
+
+                                <li>
+                                    Manipulation de coordonnées.
+                                </li>
+
+                                <li>
+                                    Traduction de règles du monde réel
+                                    en logique informatique.
+                                </li>
+
+                            </ul>
+
+                        </section>
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Technologies</h4>
+
+                            <div class="project-technologies">
+
+                                <span class="tag">Python</span>
+                                <span class="tag">Algorithmique</span>
+                                <span class="tag">Logique</span>
+
+                            </div>
+
+                        </section>
+
+
+                        <section class="project-detail-section">
+
+                            <h4>Résultat</h4>
+
+                            <p>
+                                Le programme permet de déterminer si un
+                                déplacement est valide en fonction du type
+                                de pièce et de sa position sur l'échiquier.
+                            </p>
+
+                        </section>
+
+
+                        <div class="project-link">
+
+                            <a
+                                href="https://github.com/whostdmz/Chess-piece-movement-python"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Voir sur GitHub →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <!-- ===================================================== -->
+        <!-- MESSAGE SI AUCUN PROJET -->
+        <!-- ===================================================== -->
+
+        <div
+            id="no-projects"
+            class="no-projects"
+        >
+            Aucun projet ne correspond aux filtres sélectionnés.
+        </div>
+
+
     </div>
-  </main>
 
-  <footer>
-    <p>design with <3 - whostmdz</p>
-  </footer>
+</main>
 
-  <script src="../js/main.js"></script>
-  <script src="../js/filter-projects.js"></script>
+
+<footer>
+
+    <p>
+        design with &lt;3 - whostmdz
+    </p>
+
+</footer>
+
+
+<script src="../js/main.js"></script>
+
+<script src="../js/filter-projects.js"></script>
+
+
+
 </body>
+
 </html>
