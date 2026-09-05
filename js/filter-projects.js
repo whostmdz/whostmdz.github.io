@@ -1,46 +1,4 @@
-document.querySelectorAll(".project-header").forEach(button => {
 
-    button.addEventListener("click", () => {
-
-        const project = button.closest(".project-item");
-
-        const isActive = project.classList.contains("active");
-
-
-
-        document.querySelectorAll(".project-item.active").forEach(item => {
-
-            if (item !== project) {
-
-                item.classList.remove("active");
-
-                const otherButton = item.querySelector(".project-header");
-
-                if (otherButton) {
-
-                    otherButton.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                }
-
-            }
-
-        });
-
-
-        project.classList.toggle("active");
-
-
-        button.setAttribute(
-            "aria-expanded",
-            !isActive
-        );
-
-    });
-
-});
 
 // filtre les projets apr tags
 document.addEventListener('DOMContentLoaded', () => {
