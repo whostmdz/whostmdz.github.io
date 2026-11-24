@@ -27,6 +27,9 @@ const RSS_FEEDS = [
   // Dev — Java, C, général
   { url: 'https://www.infoq.com/feed/',                                                     cat: 'Dev / Java / C', source: 'InfoQ'           },
   { url: 'https://feeds.feedburner.com/baeldung',                                           cat: 'Dev / Java / C', source: 'Baeldung'        },
+  // Sciences
+  { url: 'https://www.futura-sciences.com/rss/espace/actualites.xml',                        cat: 'Sciences',       source: 'Futura Espace' },
+  { url: 'https://www.futura-sciences.com/rss/environnement/actualites.xml',                 cat: 'Sciences',       source: 'Futura Environnement' },
   // Actu Tech générale
   { url: 'https://www.futura-sciences.com/rss/high-tech/actualites.xml',                     cat: 'Actu Tech',      source: 'Futura-Sciences'  },
   { url: 'https://korben.info/feed',                                                        cat: 'Actu Tech',      source: 'Korben'          },
