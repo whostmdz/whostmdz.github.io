@@ -28,6 +28,7 @@ const RSS_FEEDS = [
   { url: 'https://www.infoq.com/feed/',                                                     cat: 'Dev / Java / C', source: 'InfoQ'           },
   { url: 'https://feeds.feedburner.com/baeldung',                                           cat: 'Dev / Java / C', source: 'Baeldung'        },
   // Actu Tech générale
+  { url: 'https://www.futura-sciences.com/rss/high-tech/actualites.xml',                     cat: 'Actu Tech',      source: 'Futura-Sciences'  },
   { url: 'https://korben.info/feed',                                                        cat: 'Actu Tech',      source: 'Korben'          },
   { url: 'https://www.lemondeinformatique.fr/flux-rss/thematique/toutes-les-actualites/rss.xml', cat: 'Actu Tech', source: 'LMI'             },
 ];
