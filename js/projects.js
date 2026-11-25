@@ -1,9 +1,9 @@
 // IMAGES DES PROJETS
 // Les chemins sont relatifs à la page projets.html.
-// Place tes captures dans assets/projets/<nom-du-projet>/.
+// screen dans /assets/projets/dossier_du_projet_en_question
 //
-// Pour ajouter une image :
-// 1. Retire les // devant une ligne d'exemple.
+// NOTE pour ajouter une image :
+// 1. Retirer les // devant une ligne d'exemple.
 // 2. Adapte le chemin, la description et la légende.
 // 3. Duplique la ligne pour ajouter d'autres images.
 //
